@@ -11,7 +11,7 @@ const TitleHeader = ({children,  subtitle }: Props) => {
       <h1 className="font-extrabold text-transparent p-4 text-6xl bg-clip-text bg-gradient-to-r from-green-300 to-purple-400 text-center">
         {children}
       </h1>
-      <p className=" text-transparent bg-clip-text bg-gradient-to-r from-rose-100 to-teal-100 text-2xl font-bold text-center">
+      <p className=" text-transparent bg-clip-text bg-gradient-to-r from-rose-100 to-teal-100 text-2xl font-semibold text-center">
         {subtitle}
       </p>
     </div>
