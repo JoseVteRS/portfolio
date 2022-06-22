@@ -47,17 +47,17 @@ const CardProject = ({
   return (
     <div className="bg-slate-900 p-8 rounded shadow ">
       <div>
-        <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 font-bold text-3xl">
+        <h3 className="font-title text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 font-bold text-3xl">
           {title}
         </h3>
-        <p className="text-slate-400 text-sm">{description}</p>
+        <p className="font-text text-slate-300 text-md">{description}</p>
       </div>
       <div className="overflow-hidden rounded-xl mt-8">
         <Img src={imgSrc} alt="" width={450} height={300} layout="responsive" />
       </div>
 
       <div className="">
-        <h4 className="text-white text-lg mt-8 mb-2 font-semibold">
+        <h4 className="text-white text-lg mt-8 mb-2 font-semibold ">
           Tecnologies
         </h4>
 

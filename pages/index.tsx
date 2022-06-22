@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <SectionLayout id="about" container dark>
           <TitleHeader subtitle="a litter piece of my life">About</TitleHeader>
           <div className="mb-8">
-            <p className="text-white tracking-wide leading-8 text-xl subpixel-antialiased">
+            <p className="text-white tracking-wide leading-8 text-xl font-text subpixel-antialiased">
               {isLorem
                 ? `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               feugiat urna aliquet mauris pharetra rhoncus. Nam tortor nulla,
