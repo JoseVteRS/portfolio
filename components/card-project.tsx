@@ -1,6 +1,7 @@
 import Img from 'next/image';
 import BadgeWithIcon from "./badge-with-icon";
 import ButtonLink from './button-link';
+import GithubCodespacesIcon from './icons/codespaces-icon';
 import ExternalLinkIcon from './icons/external-link-icon';
 import GithubIcon from './icons/github-icon';
 import JavascriptIcon from "./icons/tecnologies/javascript-icon";
@@ -31,6 +32,7 @@ type Props = {
   tecnologies: Tecnology[];
   linkDemo: string;
   linkCode: string;
+  linkCodespace: string;
 };
 
 const CardProject = ({
@@ -39,6 +41,7 @@ const CardProject = ({
   imgSrc,
   tecnologies,
   linkDemo,
+  linkCodespace,
   linkCode,
 }: Props) => {
   return (
@@ -72,12 +75,12 @@ const CardProject = ({
         </ul>
       </div>
 
-      <div className="flex items-center justify-end mt-8 gap-5">
+      <div className="flex flex-wrap items-center justify-end mt-16 gap-5">
         <ButtonLink
-          link={linkCode}
+          link={linkDemo}
           icon={ExternalLinkIcon}
           classNamesIcon="h-6 w-6"
-          >
+        >
           Demo
         </ButtonLink>
         <ButtonLink
@@ -87,6 +90,14 @@ const CardProject = ({
           classNamesIcon="h-5 w-5 fill-slate-200"
         >
           Code
+        </ButtonLink>
+        <ButtonLink
+          link={linkCodespace}
+          icon={GithubCodespacesIcon}
+          kind="secondary"
+          classNamesIcon="h-5 w-5 fill-slate-200 flex"
+        >
+          Codespaces
         </ButtonLink>
       </div>
     </div>

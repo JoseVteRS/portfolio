@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { useState } from "react";
 import BannerTecnologies from "../components/banner-terconologies";
 import ButtonCta from "../components/button-cta";
 import CardProject from "../components/card-project";
@@ -13,41 +14,54 @@ import TitleHeader from "../components/title-section";
 import projects from "../config/data/projects.json";
 
 const Home: NextPage = () => {
+  const [isLorem, setIsLorem] = useState(true);
+
   return (
     <main className="bg-slate-800">
       <Navbar />
       <div>
         <SectionLayout id="about" container dark>
-          <TitleHeader subtitle="asdfasfff asd fa">About</TitleHeader>
+          <TitleHeader subtitle="a litter piece of my life">About</TitleHeader>
           <div className="mb-8">
-            <p className="text-white tracking-wide leading-8 text-xl">
-              Contrary to popular belief, Lorem Ipsum is not simply random text.
-              It has roots in a piece of classical Latin literature from 45 BC,
-              making it over 2000 years old. Richard McClintock, a Latin
-              professor at Hampden-Sydney College in Virginia, looked up one of
-              the more obscure Latin words, consectetur, from a Lorem Ipsum
-              passage, and going through the cites of the word in classical
-              literature, discovered
+            <p className="text-white tracking-wide leading-8 text-xl subpixel-antialiased">
+              {isLorem
+                ? `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              feugiat urna aliquet mauris pharetra rhoncus. Nam tortor nulla,
+              cursus in lorem ut, cursus feugiat odio. Pellentesque at venenatis
+              lectus. Proin rutrum vehicula leo, sed viverra urna scelerisque
+              non. Fusce ante elit, varius vel porta non, varius a sem...`
+                : `I have nothing to say for the moment`}
             </p>
           </div>
-          <ButtonCta onClick={() => console.log("Hola mundo")}>
-            Ver más
+          {isLorem && (
+            <div className="my-8 text-white italic text-lg bg-black bg-opacity-20 p-2 rounded">
+              Oh no! Another Lorem ipsum
+            </div>
+          )}
+
+          <ButtonCta onClick={() => setIsLorem(!isLorem)}>
+            {" "}
+            {isLorem
+              ? "Translate to english"
+              : "Back to Lorem, are you sure?"}{" "}
           </ButtonCta>
         </SectionLayout>
 
-        <SectionLayout id="projects"  dark>
+        <SectionLayout id="projects" dark>
           <TitleHeader subtitle="that I have made for improve knowlegedments">
             Projects
           </TitleHeader>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {projects.map((project) => (
               <CardProject
+                key={project.title}
                 title={project.title}
                 description={project.description}
                 imgSrc={project.imagSrc}
                 tecnologies={project.tecnologies}
                 linkCode={project.linkCode}
                 linkDemo={project.linkDemo}
+                linkCodespace={project.linkCodespaces}
               />
             ))}
           </div>
@@ -70,17 +84,17 @@ const Home: NextPage = () => {
           <div className="flex items-center justify-center gap-10 mt-12">
             <Link href="https://linkedin.com">
               <a target="_blank" rel="noopener noreferrer">
-                <LinkedinIcon className="fill-slate-500 h-10 w-10" />
+                <LinkedinIcon className="fill-slate-500 h-10 w-10 hover:p-2 rounded hover:fill-gray-800 hover:bg-gradient-to-r from-red-200 via-red-300 to-yellow-200" />
               </a>
             </Link>
             <Link href="https://github.com/JoseVteRS">
               <a target="_blank" rel="noopener noreferrer">
-                <GithubIcon className="fill-slate-500 h-10 w-10" />
+                <GithubIcon className="fill-slate-500 h-10 w-10 hover:p-2 rounded hover:fill-gray-700 hover:bg-gradient-to-r from-red-200 via-red-300 to-yellow-200" />
               </a>
             </Link>
             <Link href="mailto:jvrs.90@gmail.com">
               <a rel="noopener noreferrer">
-                <EnvelopeIcon className="fill-slate-500 h-10 w-10" />
+                <EnvelopeIcon className="fill-slate-500 h-10 w-10 hover:p-2 rounded hover:fill-gray-800 hover:bg-gradient-to-r from-red-200 via-red-300 to-yellow-200" />
               </a>
             </Link>
           </div>

@@ -5,7 +5,8 @@
     "imagSrc": "/project-default-image.png",
     "tecnologies": [{ "name": "node" }, { "name": "react" }],
     "linkDemo": "",
-    "linkCode": ""
+    "linkCode": "https://github.com/JoseVteRS/portfolio",
+    "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   },
   {
     "title": "This portfolio",
@@ -17,7 +18,8 @@
       { "name": "react" }
     ],
     "linkDemo": "",
-    "linkCode": ""
+    "linkCode": "https://github.com/JoseVteRS/portfolio",
+    "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   },
   {
     "title": "Image uploader",
@@ -29,7 +31,8 @@
       { "name": "react" }
     ],
     "linkDemo": "",
-    "linkCode": ""
+    "linkCode": "https://github.com/JoseVteRS/portfolio",
+    "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   },
   {
     "title": "TODO List",
@@ -42,6 +45,7 @@
       { "name": "mongo" }
     ],
     "linkDemo": "",
-    "linkCode": ""
+    "linkCode": "https://github.com/JoseVteRS/portfolio",
+    "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   }
 ]

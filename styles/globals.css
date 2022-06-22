@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.section-title {
+  font-size: clamp(3rem, 8.5vw, 10rem);
+}

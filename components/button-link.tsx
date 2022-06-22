@@ -17,7 +17,11 @@ const BUTTON_KIND: {[key: string]: any} = {
 const ButtonLink = ({children, link, icon: Icon, kind = 'primary', classNamesIcon}: any) => {
   return (
     <Link href={link}>
-      <a className={ BUTTON_KIND[kind].styles }>
+      <a
+        className={BUTTON_KIND[kind].styles}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Icon className={classNamesIcon} />
         {children}
       </a>

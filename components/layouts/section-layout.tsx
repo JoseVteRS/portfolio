@@ -12,7 +12,7 @@ const SectionLayout = ({ id, dark, container, children }: Props) => {
       id={id}
       className={`${!dark ? "bg-slate-200" : "bg-slate-800"}  py-12 `}
     >
-      <div className={`${container ? "container w-11/12 lg:w-7/12 mx-auto" : ""}`}>
+      <div className={`${container ? "container w-11/12 md:w-9/12 lg:w-8/12 mx-auto" : ""}`}>
         {children}
       </div>
     </section>
