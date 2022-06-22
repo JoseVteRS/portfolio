@@ -1,5 +1,8 @@
-import { ReactComponentElement, ReactElement, ReactNode } from "react";
+import Img from 'next/image';
 import BadgeWithIcon from "./badge-with-icon";
+import ButtonLink from './button-link';
+import ExternalLinkIcon from './icons/external-link-icon';
+import GithubIcon from './icons/github-icon';
 import JavascriptIcon from "./icons/tecnologies/javascript-icon";
 import MongoIcon from "./icons/tecnologies/mongo-icon";
 import NextJSIcon from "./icons/tecnologies/nextjs-icon";
@@ -41,17 +44,20 @@ const CardProject = ({
   return (
     <div className="bg-slate-900 p-8 rounded shadow ">
       <div>
-        <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 font-bold text-2xl">
+        <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 font-bold text-3xl">
           {title}
         </h3>
         <p className="text-slate-400 text-sm">{description}</p>
       </div>
-      <div className="w-full my-2 rounded-xl overflow-hidden">
-        <img className="w-full" src={imgSrc} alt="" />
+      <div className="overflow-hidden rounded-xl mt-8">
+        <Img src={imgSrc} alt="" width={450} height={300} layout="responsive" />
       </div>
+
       <div className="">
-        <h4 className="text-white text-xl mt-8  font-semibold">Tecnologies</h4>
-        
+        <h4 className="text-white text-lg mt-8 mb-2 font-semibold">
+          Tecnologies
+        </h4>
+
         <ul className="flex flex-wrap gap-4">
           {tecnologies &&
             tecnologies.map((tecnology: Tecnology) => (
@@ -67,18 +73,21 @@ const CardProject = ({
       </div>
 
       <div className="flex items-center justify-end mt-8 gap-5">
-        <a
-          href={linkDemo}
-          className="bg-yellow-400 hover:bg-yellow-600 border border-transparent py-2 px-4 inline-block font-semibold rounded"
-        >
+        <ButtonLink
+          link={linkCode}
+          icon={ExternalLinkIcon}
+          classNamesIcon="h-6 w-6"
+          >
           Demo
-        </a>
-        <a
-          href={linkCode}
-          className="border-yellow-400 hover:bg-yellow-100 hover:bg-opacity-5 0 border py-2 px-4 inline-block text-white font-semibold rounded"
+        </ButtonLink>
+        <ButtonLink
+          link={linkCode}
+          icon={GithubIcon}
+          kind="secondary"
+          classNamesIcon="h-5 w-5 fill-slate-200"
         >
           Code
-        </a>
+        </ButtonLink>
       </div>
     </div>
   );

@@ -1,10 +1,16 @@
+import { SVGProps } from "react";
 
 
 
 
-const MongoIcon = (props: any) => {
+const MongoIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" {...props}>
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+      {...props}
+    >
       <path
         d="M71.64 39.8C66.38 16.55 55.39 10.37 52.59 6a51.14 51.14 0 0 1-3.06-6c-.15 2.06-.42 3.37-2.17 4.93-3.53 3.14-18.49 15.34-19.75 41.74-1.17 24.62 18.1 39.81 20.64 41.38 2 1 4.35 0 5.51-.87 9.29-6.37 22-23.37 17.89-47.38"
         style={{
@@ -25,6 +31,6 @@ const MongoIcon = (props: any) => {
       />
     </svg>
   );
-}
+};
 
 export default MongoIcon

@@ -2,6 +2,7 @@
   {
     "title": "Weather app",
     "description": "App for show current weather",
+    "imagSrc": "/project-default-image.png",
     "tecnologies": [{ "name": "node" }, { "name": "react" }],
     "linkDemo": "",
     "linkCode": ""
@@ -9,6 +10,19 @@
   {
     "title": "This portfolio",
     "description": "App for show current weather",
+    "imagSrc": "/project-default-image.png",
+    "tecnologies": [
+      { "name": "typescript" },
+      { "name": "next" },
+      { "name": "react" }
+    ],
+    "linkDemo": "",
+    "linkCode": ""
+  },
+  {
+    "title": "Image uploader",
+    "description": "This app allowed you upload an image",
+    "imagSrc": "/project-default-image.png",
     "tecnologies": [
       { "name": "typescript" },
       { "name": "next" },
@@ -20,7 +34,13 @@
   {
     "title": "TODO List",
     "description": "An application for control your tasks",
-    "tecnologies": [{ "name": "javascript" }, { "name": "react" }, { "name": "node" }, {"name": "mongo"}],
+    "imagSrc": "/project-default-image.png",
+    "tecnologies": [
+      { "name": "javascript" },
+      { "name": "react" },
+      { "name": "node" },
+      { "name": "mongo" }
+    ],
     "linkDemo": "",
     "linkCode": ""
   }
