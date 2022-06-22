@@ -12,6 +12,7 @@ import Navbar from "../components/navbar";
 import TitleHeader from "../components/title-section";
 
 import projects from "../config/data/projects.json";
+import texts from "../config/data/texts.json";
 
 const Home: NextPage = () => {
   const [isLorem, setIsLorem] = useState(true);
@@ -20,8 +21,8 @@ const Home: NextPage = () => {
     <main className="bg-slate-800">
       <Navbar />
       <div>
-        <SectionLayout id="about" container dark>
-          <TitleHeader subtitle="a litter piece of my life">About</TitleHeader>
+        <SectionLayout id="about"  container className="bg-slate-900">
+          <TitleHeader  subtitle="a litter piece of my life">About</TitleHeader>
           <div className="mb-8">
             <p className="text-white tracking-wide leading-8 text-xl font-text subpixel-antialiased">
               {isLorem
@@ -30,12 +31,12 @@ const Home: NextPage = () => {
               cursus in lorem ut, cursus feugiat odio. Pellentesque at venenatis
               lectus. Proin rutrum vehicula leo, sed viverra urna scelerisque
               non. Fusce ante elit, varius vel porta non, varius a sem...`
-                : `I have nothing to say for the moment`}
+                : texts.about}
             </p>
           </div>
           {isLorem && (
             <div className="my-8 text-white italic text-lg bg-black bg-opacity-20 p-2 rounded">
-              Oh no! Another Lorem ipsum
+              Oh no! Another Lorem ipsum text
             </div>
           )}
 
@@ -47,7 +48,7 @@ const Home: NextPage = () => {
           </ButtonCta>
         </SectionLayout>
 
-        <SectionLayout id="projects" dark>
+        <SectionLayout id="projects" dark className="container mx-auto">
           <TitleHeader subtitle="that I have made for improve knowlegedments">
             Projects
           </TitleHeader>
@@ -67,7 +68,7 @@ const Home: NextPage = () => {
           </div>
         </SectionLayout>
 
-        <SectionLayout id="stack" container dark>
+        <SectionLayout id="stack" dark>
           <TitleHeader subtitle="which have been used by me">
             Technologies
           </TitleHeader>
@@ -77,7 +78,7 @@ const Home: NextPage = () => {
           </div>
         </SectionLayout>
 
-        <SectionLayout id="contact">
+        <SectionLayout id="contact" className="bg-slate-100">
           <TitleHeader dark subtitle="I let you some ways for contact me">
             Contact
           </TitleHeader>

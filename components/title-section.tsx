@@ -22,7 +22,7 @@ const TitleHeader = ({ children, dark = false, subtitle }: Props) => {
         </>
       ) : (
         <>
-          <h1 className="-tracking-wide text-transparent p-4 section-title font-title font-black bg-clip-text bg-gradient-to-r from-green-300 to-purple-400 text-center">
+          <h1 className="-tracking-wide text-transparent p-4 section-title font-title font-bold bg-clip-text bg-gradient-to-r from-green-300 to-purple-400 text-center">
             {children}
           </h1>
           <p className="font-text  text-transparent bg-clip-text bg-gradient-to-r from-rose-100 to-teal-100 text-2xl font-semibold text-center">

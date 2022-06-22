@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        title: ["Inconsolata", "sans-serif"],
+        title: ["IBM Plex Mono", "sans-serif"],
         text: ["News Cycle", "sans-serif"],
       },
     },
