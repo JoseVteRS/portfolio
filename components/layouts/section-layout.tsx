@@ -11,7 +11,7 @@ const SectionLayout = ({ id, dark, container, children, className }: Props) => {
   return (
     <section
       id={id}
-      className={`${!dark ? "" : "bg-slate-800"} ${className ? className : ""}  py-12 min-h-screen`}
+      className={`${!dark ? "" : "bg-slate-800"} ${className ? className : ""}  py-12 min-h-screen grid place-content-center`}
     >
       <div
         className={`${

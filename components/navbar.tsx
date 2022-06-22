@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const NAVBAR_ITEMS = [
   {
     title: "About",
@@ -5,15 +7,15 @@ const NAVBAR_ITEMS = [
   },
   {
     title: "Projects",
-    link: "#about",
+    link: "#projects",
   },
   {
     title: "Tecnologies",
-    link: "#about",
+    link: "#stack",
   },
   {
     title: "Contact",
-    link: "#about",
+    link: "#contact",
   },
 ];
 
@@ -24,7 +26,11 @@ const Navbar = (props: Props) => {
     <nav className="w-full bg-slate-900 text-slate-50 uppercase text-sm tracking-wide p-4">
       <ul className="flex items-center justify-end gap-3">
         {NAVBAR_ITEMS.map((item) => (
-          <li key={item.link}>{item.title}</li>
+          <li key={item.link}>
+            <Link href={item.link}>
+              <a>{item.title}</a>
+            </Link>
+          </li>
         ))}
       </ul>
     </nav>
