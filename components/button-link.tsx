@@ -14,9 +14,9 @@ const BUTTON_KIND: {[key: string]: any} = {
   },
 };
 
-const ButtonLink = ({children, link, icon: Icon, kind = 'primary', classNamesIcon}: any) => {
+const ButtonLink = ({children, link, icon: Icon, kind = 'primary', classNamesIcon, ...props}: any) => {
   return (
-    <Link href={link}>
+    <Link href={link} {...props}>
       <a
         className={BUTTON_KIND[kind].styles}
         target="_blank"

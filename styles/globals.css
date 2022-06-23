@@ -11,5 +11,17 @@
 }
 
 .section-title {
-  font-size: clamp(3rem, 8.5vw, 10rem);
+  font-size: clamp(4rem, 10vw, 10rem);
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-600;
+}
+
+::-webkit-scrollbar {
+  @apply w-3
 }

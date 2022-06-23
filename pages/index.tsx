@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import BannerTecnologies from "../components/banner-terconologies";
 import ButtonCta from "../components/button-cta";
+import ButtonLink from "../components/button-link";
 import CardProject from "../components/card-project";
 import EnvelopeIcon from "../components/icons/envelope-icon";
 import GithubIcon from "../components/icons/github-icon";
@@ -18,11 +19,11 @@ const Home: NextPage = () => {
   const [isLorem, setIsLorem] = useState(true);
 
   return (
-    <main className="bg-slate-800">
+    <main className="bg-gradient-to-tr from-slate-700 via-sky-900 to-slate-900">
       <Navbar />
       <div>
-        <SectionLayout id="about"  container className="bg-slate-900">
-          <TitleHeader  subtitle="a litter piece of my life">About</TitleHeader>
+        <SectionLayout id="about" container className="">
+          <TitleHeader subtitle="a litter piece of my life">About</TitleHeader>
           <div className="mb-8">
             <p className="text-white tracking-wide leading-8 text-xl font-text subpixel-antialiased">
               {isLorem
@@ -48,7 +49,10 @@ const Home: NextPage = () => {
           </ButtonCta>
         </SectionLayout>
 
-        <SectionLayout id="projects" dark className="container mx-auto">
+        <SectionLayout
+          id="projects"
+          className=" bg-gradient-to-t  from-slate-900  to-sky-900"
+        >
           <TitleHeader subtitle="that I have made for improve knowlegedments">
             Projects
           </TitleHeader>
@@ -68,7 +72,10 @@ const Home: NextPage = () => {
           </div>
         </SectionLayout>
 
-        <SectionLayout id="stack" dark>
+        <SectionLayout
+          id="stack"
+          className="bg-gradient-to-b  from-slate-900  to-sky-900"
+        >
           <TitleHeader subtitle="which have been used by me">
             Technologies
           </TitleHeader>
@@ -84,18 +91,27 @@ const Home: NextPage = () => {
           </TitleHeader>
           <div className="flex items-center justify-center gap-10 mt-12">
             <Link href="https://linkedin.com">
-              <a target="_blank" rel="noopener noreferrer">
-                <LinkedinIcon className="fill-slate-500 h-10 w-10 hover:p-2 rounded hover:fill-gray-800 hover:bg-gradient-to-r from-red-200 via-red-300 to-yellow-200" />
+              <a
+                rel="noopener noreferrer"
+                className="hover:shadow-xl p-5 text-white rounded-md transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-0 hover:bg-pos-100"
+              >
+                <LinkedinIcon className="fill-slate-50 h-8 w-8" />
               </a>
             </Link>
             <Link href="https://github.com/JoseVteRS">
-              <a target="_blank" rel="noopener noreferrer">
-                <GithubIcon className="fill-slate-500 h-10 w-10 hover:p-2 rounded hover:fill-gray-700 hover:bg-gradient-to-r from-red-200 via-red-300 to-yellow-200" />
+              <a
+                rel="noopener noreferrer"
+                className="hover:shadow-xl p-5 text-white rounded-md transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-0 hover:bg-pos-100"
+              >
+                <GithubIcon className="fill-slate-50 h-8 w-8" />
               </a>
             </Link>
             <Link href="mailto:jvrs.90@gmail.com">
-              <a rel="noopener noreferrer">
-                <EnvelopeIcon className="fill-slate-500 h-10 w-10 hover:p-2 rounded hover:fill-gray-800 hover:bg-gradient-to-r from-red-200 via-red-300 to-yellow-200" />
+              <a
+                rel="noopener noreferrer"
+                className="hover:shadow-xl p-5 text-white rounded-md transition-all duration-500 bg-gradient-to-tl from-pink-500 via-red-500 to-yellow-400 bg-size-200 bg-pos-0 hover:bg-pos-100"
+              >
+                <EnvelopeIcon className="fill-slate-50 h-8 w-8" />
               </a>
             </Link>
           </div>

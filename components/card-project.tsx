@@ -45,9 +45,9 @@ const CardProject = ({
   linkCode,
 }: Props) => {
   return (
-    <div className="bg-slate-900 p-8 rounded shadow ">
+    <div className="bg-slate-900 bg-opacity-40 p-8 rounded-xl">
       <div>
-        <h3 className="font-title text-transparent bg-clip-text bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 font-bold text-3xl">
+        <h3 className="font-title text-transparent bg-clip-text  bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 font-bold text-3xl">
           {title}
         </h3>
         <p className="font-text text-slate-300 text-md">{description}</p>
