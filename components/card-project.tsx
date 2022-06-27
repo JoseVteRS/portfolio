@@ -1,9 +1,9 @@
-import Img from 'next/image';
+import Img from "next/image";
 import BadgeWithIcon from "./badge-with-icon";
-import ButtonLink from './button-link';
-import GithubCodespacesIcon from './icons/codespaces-icon';
-import ExternalLinkIcon from './icons/external-link-icon';
-import GithubIcon from './icons/github-icon';
+import ButtonLink from "./button-link";
+import GithubCodespacesIcon from "./icons/codespaces-icon";
+import ExternalLinkIcon from "./icons/external-link-icon";
+import GithubIcon from "./icons/github-icon";
 import JavascriptIcon from "./icons/tecnologies/javascript-icon";
 import MongoIcon from "./icons/tecnologies/mongo-icon";
 import NextJSIcon from "./icons/tecnologies/nextjs-icon";
@@ -11,7 +11,7 @@ import NodeIcon from "./icons/tecnologies/node-icon";
 import ReactIcon from "./icons/tecnologies/react-icon";
 import TypescriptIcon from "./icons/tecnologies/typescript-icon";
 
-type TechIcon = {[key: string]: any}
+type TechIcon = { [key: string]: any };
 
 const TECH_ICONS: TechIcon = {
   node: { icon: NodeIcon, color: "fill-green-500" },
@@ -44,6 +44,8 @@ const CardProject = ({
   linkCodespace,
   linkCode,
 }: Props) => {
+  // TODO: Instalar esta libreria y probar
+// npm install --save html-to-image
   return (
     <div className="bg-slate-900 bg-opacity-40 p-8 rounded-xl">
       <div>
@@ -52,6 +54,7 @@ const CardProject = ({
         </h3>
         <p className="font-text text-slate-300 text-md">{description}</p>
       </div>
+      <button onClick={()=> {}}>Guardar captura</button>
       <div className="overflow-hidden rounded-xl mt-8">
         <Img src={imgSrc} alt="" width={450} height={300} layout="responsive" />
       </div>

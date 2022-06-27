@@ -4,7 +4,7 @@
     "description": "App for show current weather",
     "imagSrc": "/project-default-image.png",
     "tecnologies": [{ "name": "node" }, { "name": "react" }],
-    "linkDemo": "",
+    "linkDemo": "https://google.es",
     "linkCode": "https://github.com/JoseVteRS/portfolio",
     "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   },
@@ -17,7 +17,7 @@
       { "name": "next" },
       { "name": "react" }
     ],
-    "linkDemo": "",
+    "linkDemo": "https://youtube.com",
     "linkCode": "https://github.com/JoseVteRS/portfolio",
     "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   },
@@ -30,7 +30,7 @@
       { "name": "next" },
       { "name": "react" }
     ],
-    "linkDemo": "",
+    "linkDemo": "https://twitch.tv",
     "linkCode": "https://github.com/JoseVteRS/portfolio",
     "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   },
@@ -44,7 +44,7 @@
       { "name": "node" },
       { "name": "mongo" }
     ],
-    "linkDemo": "",
+    "linkDemo": "https://twitch.tv",
     "linkCode": "https://github.com/JoseVteRS/portfolio",
     "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   }
