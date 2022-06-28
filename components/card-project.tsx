@@ -1,5 +1,4 @@
 import Img from "next/image";
-import captureWebsite from "capture-website";
 import BadgeWithIcon from "./badge-with-icon";
 import ButtonLink from "./button-link";
 import GithubCodespacesIcon from "./icons/codespaces-icon";
@@ -12,6 +11,7 @@ import NodeIcon from "./icons/tecnologies/node-icon";
 import ReactIcon from "./icons/tecnologies/react-icon";
 import TypescriptIcon from "./icons/tecnologies/typescript-icon";
 import { useEffect, useState } from "react";
+import ImageSkeleton from "./image-skeleton";
 
 type TechIcon = { [key: string]: any };
 
@@ -46,8 +46,16 @@ const CardProject = ({
   linkCodespace,
   linkCode,
 }: Props) => {
-  // https://gist.github.com/ftdgomez/a7e417688c3e59ce01fb4e78a76b709a
-  // https://stackoverflow.com/questions/62675456/make-snapshot-of-page-state-in-next-js
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(`/api/screenshot${linkDemo ? `?url=${linkDemo}` : ""}`)
+      .then((res) => res.json())
+      .then((res) => setData(res.blob))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="bg-slate-900 bg-opacity-40 p-8 rounded-xl">
       <div>
@@ -56,9 +64,12 @@ const CardProject = ({
         </h3>
         <p className="font-text text-slate-300 text-md">{description}</p>
       </div>
-      <button onClick={() => {}}>Guardar captura</button>
       <div className="overflow-hidden rounded-xl mt-8">
-        <Img src={imgSrc} alt="" width={450} height={300} layout="responsive" />
+        {!data ? (
+          <ImageSkeleton />
+        ) : (
+          <Img src={data} alt="" width={450} height={300} layout="responsive" />
+        )}
       </div>
 
       <div className="">
