@@ -8,56 +8,45 @@ import ReactIcon from "./icons/tecnologies/react-icon";
 import TailwindcssIcon from "./icons/tecnologies/tailwindcss-icon";
 import TypescriptIcon from "./icons/tecnologies/typescript-icon";
 
-type Props = {};
 
-const BannerTecnologies = (props: Props) => {
+const BannerTecnologies = () => {
   return (
-    <div className="flex flex-wrap gap-5 items-center justify-around container w-2/3 mx-auto">
+    <div className="flex flex-wrap gap-5 items-center justify-around container w-2/3 mx-auto relative">
+
+
       <div className="text-center bg-slate-900 p-4 rounded-xl shadow-xl relative">
-   
         <BadgeWithIcon
           icon={JavascriptIcon}
           color="fill-yellow-400"
           size="h-12 w-12"
         />
-   
       </div>
 
       <div className="text-center bg-slate-900 p-4 rounded-xl shadow-xl relative">
-
         <BadgeWithIcon
           icon={TypescriptIcon}
           color="fill-blue-600"
           size="h-12 w-12"
         />
-  
       </div>
-
       <div className="text-center bg-slate-900 p-4 rounded-xl shadow-xl relative">
-
         <BadgeWithIcon
           icon={ReactIcon}
           color="fill-cyan-400"
           size="h-12 w-12"
         />
- 
       </div>
       <div className="text-center bg-slate-900 p-4 rounded-xl shadow-xl relative">
-
         <BadgeWithIcon icon={NextJSIcon} color="fill-white" size="h-12 w-12" />
-  
       </div>
       <div className="text-center bg-slate-900 p-4 rounded-xl shadow-xl relative">
-
         <BadgeWithIcon
           icon={NodeIcon}
           color="fill-yellow-400"
           size="h-12 w-12"
         />
-   
       </div>
       <div className="text-center bg-slate-900 p-4 rounded-xl shadow-xl relative">
-        
         <BadgeWithIcon
           icon={TailwindcssIcon}
           color="fill-white"

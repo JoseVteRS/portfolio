@@ -1,5 +1,9 @@
 import { useState } from "react";
-import type { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
+import type {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  NextPage,
+} from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -17,6 +21,8 @@ import TitleHeader from "../components/title-section";
 
 import projects from "../config/data/projects.json";
 import texts from "../config/data/texts.json";
+import TimelineContainer from "../components/timeline/timeline-container";
+import TimelineItem from "../components/timeline/timeline-item";
 
 const Home: NextPage = () => {
   const [isLorem, setIsLorem] = useState(true);
@@ -29,7 +35,7 @@ const Home: NextPage = () => {
       <main className="bg-gradient-to-tr from-slate-700 via-sky-900 to-slate-900">
         <Navbar />
         <div>
-          <SectionLayout id="about" container className="">
+          <SectionLayout id="about" container>
             <TitleHeader subtitle={t("about_subtitle")}>
               {t("about")}
             </TitleHeader>
@@ -131,15 +137,14 @@ const Home: NextPage = () => {
   );
 };
 
-
-export const getServerSideProps: GetServerSideProps = async ({ locale }: GetServerSidePropsContext ) => {
-
+export const getServerSideProps: GetServerSideProps = async ({
+  locale,
+}: GetServerSidePropsContext) => {
   return {
     props: {
       ...(await serverSideTranslations(locale || "es", ["common"])),
     },
   };
 };
-
 
 export default Home;
