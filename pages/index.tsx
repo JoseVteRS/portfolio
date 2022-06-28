@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
@@ -20,8 +20,7 @@ import texts from "../config/data/texts.json";
 
 const Home: NextPage = () => {
   const [isLorem, setIsLorem] = useState(true);
-  const {t} = useTranslation();
-
+  const { t } = useTranslation();
   return (
     <>
       <Head>
@@ -133,11 +132,14 @@ const Home: NextPage = () => {
 };
 
 
-export const getServerSideProps: GetServerSideProps = async ({ locale }: any) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common"])),
-  },
-});
+export const getServerSideProps: GetServerSideProps = async ({ locale }: GetServerSidePropsContext ) => {
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "es", ["common"])),
+    },
+  };
+};
 
 
 export default Home;

@@ -12,6 +12,8 @@ import ReactIcon from "./icons/tecnologies/react-icon";
 import TypescriptIcon from "./icons/tecnologies/typescript-icon";
 import { useEffect, useState } from "react";
 import ImageSkeleton from "./image-skeleton";
+import { fetchUrl } from "../utils/api/fetch-url";
+import { useUrl } from "../utils/hooks/use-url";
 
 type TechIcon = { [key: string]: any };
 
@@ -47,14 +49,7 @@ const CardProject = ({
   linkCode,
 }: Props) => {
 
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch(`/api/screenshot${linkDemo ? `?url=${linkDemo}` : ""}`)
-      .then((res) => res.json())
-      .then((res) => setData(res.blob))
-      .catch((err) => console.log(err));
-  }, []);
+  const {img, imgError, imgLoading} = useUrl(linkDemo);
 
   return (
     <div className="bg-slate-900 bg-opacity-40 p-8 rounded-xl">
@@ -65,10 +60,15 @@ const CardProject = ({
         <p className="font-text text-slate-300 text-md">{description}</p>
       </div>
       <div className="overflow-hidden rounded-xl mt-8">
-        {!data ? (
+        {imgLoading ? (
           <ImageSkeleton />
         ) : (
-          <Img src={data} alt="" width={450} height={300} layout="responsive" />
+          <img
+            src={img ?? "/project-default-image.png"}
+            alt=""
+            width={450}
+            height={300}
+          />
         )}
       </div>
 
