@@ -2,6 +2,13 @@ import { Blob } from "buffer";
 import { useEffect, useState } from "react";
 import { fetchUrl } from "../api/fetch-url";
 
+interface LoadImageUrlParams {
+  setData: (newData: string) => void;
+  setError: () => void;
+  signal: AbortSignal;
+  linkDemo: string;
+}
+
 export const useUrl = (linkDemo: string) => {
   const [img, setImg] = useState({
     imgBlob: "",
@@ -9,7 +16,7 @@ export const useUrl = (linkDemo: string) => {
     loading: true,
   });
 
-  const setData = (newData) => {
+  const setData = (newData: string) => {
     setImg({ imgBlob: newData, loading: false, error: false });
   };
 
@@ -19,7 +26,7 @@ export const useUrl = (linkDemo: string) => {
 
   useEffect(() => {
     const controller = new AbortController();
-    loadImageFromUrl(setData, setError, controller.signal, linkDemo)
+    loadImageFromUrl({setData, setError, signal: controller.signal, linkDemo})
     return ()=> controller.abort();
   }, [linkDemo]);
 
@@ -30,7 +37,7 @@ export const useUrl = (linkDemo: string) => {
   };
 };
 
-const loadImageFromUrl = async (setData, setError, signal, linkDemo) => {
+const loadImageFromUrl = async ({setData, setError, signal, linkDemo}: LoadImageUrlParams) => {
   const { imageBlobText, aborted } = await fetchUrl(linkDemo, signal);
   if (aborted) return;
   if (imageBlobText) setData(imageBlobText);

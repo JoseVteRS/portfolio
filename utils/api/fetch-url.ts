@@ -24,7 +24,7 @@ export const fetchUrl = async (link: string, signal: AbortSignal) => {
       error: !res.ok,
       aborted: false,
     };
-  } catch (err) {
+  } catch (err: any) {
     const isAborted = err.name === "AbortError";
     return {
         imageBlob: undefined,

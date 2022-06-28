@@ -4,7 +4,7 @@
     "description": "App for show current weather",
     "imagSrc": "/project-default-image.png",
     "tecnologies": [{ "name": "node" }, { "name": "react" }],
-    "linkDemo": "https://google.es",
+    "linkDemo": "https://casinomediterraneo.es",
     "linkCode": "https://github.com/JoseVteRS/portfolio",
     "linkCodespaces": "https://github.dev/JoseVteRS/portfolio"
   },
