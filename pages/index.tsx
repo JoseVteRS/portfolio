@@ -72,8 +72,9 @@ const Home: NextPage = () => {
               {t("projects")}
             </TitleHeader>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {projects.map((project) => (
+              {projects.map((project, index) => (
                 <CardProject
+                index={index}
                   key={project.title}
                   title={project.title}
                   description={project.description}
